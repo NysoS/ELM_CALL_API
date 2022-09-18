@@ -1,14 +1,11 @@
 module Elements.CatalogElement exposing (..)
 
-import Elements.ProductElement exposing (cardProduct)
+import Elements.CategoryElement exposing (cardCategory, Category)
 import Html exposing (Html, div)
 import Html.Attributes exposing (class)
 
-catalogView : Html msg
-catalogView =
+catalogView : List Category -> Html msg
+catalogView categories =
     div
         [ class "d-flex m-2 justify-content-center" ]
-        [ cardProduct
-        , cardProduct
-        , cardProduct
-        ]
+        <| List.map cardCategory categories
